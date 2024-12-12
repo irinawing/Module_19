@@ -15,7 +15,7 @@ class Game(models.Model):
     size = models.DecimalField(max_digits=10, decimal_places=2)  # Размер файлов игры
     description = models.TextField()  # Описание игры
     age_limited = models.BooleanField(default=False)  # Ограничение по возрасту
-    buyers = models.ManyToManyField(Buyer, related_name='games')  # Покупатели
+    buyers = models.ManyToManyField(Buyer, related_name='games', default=None)  # Покупатели
 
     def __str__(self):
         return self.title
